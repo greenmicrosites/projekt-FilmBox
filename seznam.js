@@ -1,6 +1,8 @@
+
+
 const filmy = [
 	{
-		id: 'pelisky',
+		id:'pelisky',
 		nazev: 'Pelíšky',
 		plakat: {
 			url: 'https://image.pmgstatic.com/cache/resized/w663/files/images/film/posters/165/059/165059101_56d52a.jpg',
@@ -103,4 +105,55 @@ const filmy = [
 			'Na zámek v podhůří Krkonoš přijíždí jeho nový majitel Štěpán se svojí snoubenkou, krásnou komtesou Blankou, a mladším bratrem Adamem. Cestou kočár nešťastně srazí kolemjdoucí dívku, Adam jí pomůže a ona se do něj zamiluje. Na zámku Adam objeví starou vlašskou knihu, která by měla obsahovat cestu k pokladům. Tajemné značky vlašské knihy však nedokáže vyluštit ani národopisec Jiráček, který v kraji sbírá pověsti a nevychází z údivu nad tím, že zdejší lidé stále věří v Krakonoše. Na zámku se objeví záhadný cizinec a nabídne Štěpánovi, že jej k pokladu za určitých podmínek dovede. Výprava do hor může začít. Naplní se Liduščina láska k Adamovi? Jakou záhadu skrývá starý obraz na zámku Hůrka a co strašlivého se v horách kdysi odehrálo? A kdo je vlastně Krakonoš a jaké je jeho největší tajemství? (csfd.cz, Česká televize)',
 		premiera: '2022-12-24',
 	},
+	{
+		id: 'lest-lasicek',
+		nazev: 'Lest lasiček',
+		plakat: {
+			url: 'plakat_lest-lasicek.jpg',
+			sirka: 420,
+			vyska: 591,
+		},
+		ochutnavka: 'Ve starém venkovském sídle tráví důchod čtyři vysloužilci filmového průmyslu',
+		popis:
+			'Ve snímku Lest lasiček vytvoří jedna z největších hvězd minulosti Mara Ordazová (Graciela Borgesová) neobvyklou rodinu v dekadentním venkovském sídle, kde žije se svým invalidním manželem (Luis Brandoni), scénáristou jejích největších hitů Norbertem Imbertem (Oscar Martínez) a režisérem, s nímž mnohokrát spolupracovala (Marcos Mundstock). Jejich poklidný život se navždy změní poté, co se u nich nečekaně objeví mladá dvojice, která údajně zabloudila během výletu. Pravda je ale jiná. Jedná se totiž o realitní makléře, kteří chtějí Maru přesvědčit k prodeji domu v naději, že si tak přijdou na velké peníze. Jak ovšem brzy zjistíme, oběma podvodníkům (Clara Lagová a Nicolas Francella) hrozí nebezpečí, že se stanou jen dalším párem lasiček, které Imbert chytá do svých pastí.',
+		premiera: '2019-05-16',
+	},
 ]
+
+
+const elSeznamFilmu = document.querySelector("#seznam-filmu")
+
+
+filmy.forEach((film) => {
+    elSeznamFilmu.innerHTML += `
+    
+	<div class="col">
+		<div class="card">
+			<img
+				src="${film.plakat.url}"
+				width="${film.plakat.sirka}"
+				height="${film.plakat.vyska}"
+				class="card-img-top"
+				alt="${film.nazev}"
+			/>
+			<div class="card-body">
+				<h5 class="card-title">${film.nazev}</h5>
+				<p class="card-text">${film.ochutnavka}</p>
+				<a href="film.html#${film.id}" class="btn btn-primary">Přehrát</a>
+			</div>
+		</div>
+	</div>
+    `
+})
+
+/*
+articles.forEach((article) => {
+    mainElement.innerHTML += `
+    <div class="article-card">
+        <h2>${article.title}</h2>
+        <p>${article.lead}</p>
+        <a href="article.html#${article.id}">Přečíst celý článek</a>
+    </div>
+    `
+})
+*/
