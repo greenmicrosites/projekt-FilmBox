@@ -164,7 +164,6 @@ elBtnSendComment.addEventListener("click", () => {
 		elNote.focus()		
 	}
 
-// TAHLE PODMÍNKA NEFUNGUJE
 	if ((elConditions.checked == 1) && (elNote.value !== "")) {
 		console.log("splneno")
 		elCommentForm.style.display = "none"
