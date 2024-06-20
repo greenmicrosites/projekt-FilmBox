@@ -145,7 +145,8 @@ elFilmImg.innerHTML += `
 const elNote = document.querySelector("#message-input")
 const elConditions = document.querySelector("#terms-checkbox")
 const elBtnSendComment = document.querySelector("button.btn-primary")
-
+const elCommentForm = document.querySelector("#note-form")
+const elPoznamka = document.querySelector(".poznamka")
 //console.log(elConditions)
 
 
@@ -164,8 +165,10 @@ elBtnSendComment.addEventListener("click", () => {
 	}
 
 // TAHLE PODMÍNKA NEFUNGUJE
-	if ((elConditions.checked == 1) && (elNote !== "")) {
+	if ((elConditions.checked == 1) && (elNote.value !== "")) {
 		console.log("splneno")
+		elCommentForm.style.display = "none"
+		elPoznamka.innerHTML = elNote.value
 	} 
 
 })
