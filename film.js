@@ -137,8 +137,9 @@ elFilmImg.innerHTML += `
 <img src="${filmData.plakat.url}" alt="${filmData.nazev}" width="${filmData.plakat.sirka}" height="${filmData.plakat.vyska}" />
 `
 // premiera - to DO
-//const elPremiera = document.querySelector("#premiera")
-//elPremiera.innerHTML = `Premiéra <strong>${filmData.premiera}</strong>, což je za 24 dní.`
+const elPremiera = document.querySelector("#premiera")
+console.log(dayjs(filmData.premiera).format('D. M. YYYY'))
+elPremiera.innerHTML = `Premiéra <strong>${dayjs(filmData.premiera).format('D. M. YYYY')}</strong>, což je za 22 dní.`
 
 
 // note
