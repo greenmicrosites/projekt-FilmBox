@@ -139,7 +139,8 @@ elFilmImg.innerHTML += `
 // premiera - to DO
 const elPremiera = document.querySelector("#premiera")
 console.log(dayjs(filmData.premiera).format('D. M. YYYY'))
-elPremiera.innerHTML = `Premiéra <strong>${dayjs(filmData.premiera).format('D. M. YYYY')}</strong>, což je za 22 dní.`
+elPremiera.innerHTML = `Premiéra <strong>${dayjs(filmData.premiera).format('D. M. YYYY')}</strong>`
+//, což je za 22 dní.
 
 
 // note
