@@ -137,11 +137,36 @@ elFilmImg.innerHTML += `
 <img src="${filmData.plakat.url}" alt="${filmData.nazev}" width="${filmData.plakat.sirka}" height="${filmData.plakat.vyska}" />
 `
 // premiera - to DO
-const elPremiera = document.querySelector("#premiera")
-elPremiera.innerHTML = `Premiéra <strong>${filmData.premiera}</strong>`
-// , což je za 24 dní.
+//const elPremiera = document.querySelector("#premiera")
+//elPremiera.innerHTML = `Premiéra <strong>${filmData.premiera}</strong>, což je za 24 dní.`
 
 
 // note
-const elNote = document.querySelector("#note-form")
+const elNote = document.querySelector("#message-input")
+const elConditions = document.querySelector("#terms-checkbox")
+const elBtnSendComment = document.querySelector("button.btn-primary")
+
+//console.log(elConditions)
+
+
+
+elBtnSendComment.addEventListener("click", () => {
+	console.log("clicked")
+
+	if (elConditions.checked == 0 ) {
+		elConditions.classList.add("is-invalid")
+		elConditions.focus()
+	}
+	
+	if (elNote.value == "") {
+		elNote.classList.add("is-invalid")
+		elNote.focus()		
+	}
+
+// TAHLE PODMÍNKA NEFUNGUJE
+	if ((elConditions.checked == 1) && (elNote !== "")) {
+		console.log("splneno")
+	} 
+
+})
 
